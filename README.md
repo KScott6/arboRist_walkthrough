@@ -5,9 +5,9 @@ The NCBI database contains metadata of varying quality. This script attempts to 
 
 In order to use this script, please specify your desired options:
 
-# Step one: specify options
+# Step 1: Specify project options
 
-## Main Options
+#### Main Options
 > base_dir <- "path.expand('~')" # change to whereever you want your project directory stored
 > 
 > project_name <- "Blackwellomyces_tree" # name your project
@@ -18,10 +18,10 @@ In order to use this script, please specify your desired options:
 > 
 > min_region_requirement <- 3 # choose the minimum number of regions a strain needs to have in order to be included (defaults to the number of regions you selected)
 
-## optional: provide full path to a custom metadata file
+#### optional: provide full path to a custom metadata file
 > my_lab_sequences <- "" # each entry should have "Accession", strain", "sequence", "organism", and "gene" metadata provided at minimum
 
-## additional options
+#### additional options
 
 Here, I specified that I was only interested in accessions that were not genomes, scaffolds, or contigs, and were between 100-5000bp long.
 I also HIGHLY recommended to provide your NCBI API key (increases number requests/second allowed).
@@ -55,7 +55,8 @@ The metadata retrieval step in particular can take quite a long time, depending 
 > data_curate(project_name, taxa_of_interest, acc_to_exclude, min_region_requirement)
 
 
-# Continue pipeline for iqtree2 partitioned analysis (multi-gene tree)
+At this point the data-retrieval steps in arboRist are complete. You may continue this pipeline to run a iqtree2 partitioned analysis (multi-gene tree)
+
 
 # Step 5:  Separate alignment of region fastas
 At this point, arboRist does not automatically align your sequences for you. 

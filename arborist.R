@@ -1,5 +1,17 @@
 # arboRist  -  semi-automatic NCBI nucleotide data retrieval and curation (plus additional iqtree2 partitioned analysis file preparation)
 
+# loading packages
+required_packages <- c("rentrez", "stringr", "plyr", "dplyr", "withr", "XML", 
+                       "data.table", "tidyr", "phylotools", "scales", 
+                       "purrr", "readr", "phytools", "RColorBrewer", 
+                       "maps", "ggplot2", "tidygeocoder", "treeio", 
+                       "ggtree", "ggrepel", "taxize", "Biostrings")
+installed_packages <- required_packages %in% rownames(installed.packages())
+if (any(installed_packages == FALSE)) {
+  install.packages(required_packages[!installed_packages])
+}
+invisible(lapply(required_packages, library, character.only = TRUE))
+
 # main options
 base_dir <- "path.expand('~')" # change to whereever you want your project directory stored
 project_name <- "Blackwellomyces_tree" # name your project

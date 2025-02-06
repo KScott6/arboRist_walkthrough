@@ -7,9 +7,11 @@ required_packages <- c("rentrez", "stringr", "plyr", "dplyr", "withr", "XML",
                        "maps", "ggplot2", "tidygeocoder", "treeio", 
                        "ggtree", "ggrepel", "taxize", "Biostrings")
 installed_packages <- required_packages %in% rownames(installed.packages())
+
 if (any(installed_packages == FALSE)) {
   install.packages(required_packages[!installed_packages])
 }
+
 invisible(lapply(required_packages, library, character.only = TRUE))
 
 # main options
@@ -55,8 +57,6 @@ setup_project_structure <- function(base_dir,
   setwd(project_dir)
 }
 
-
-
 get_sleep_duration <- function() {
   if (!is.null(ncbi_api_key)) {
     return(0.3)
@@ -64,23 +64,6 @@ get_sleep_duration <- function() {
     return(0.5)
   }
 }
-
-
-
-load_required_packages <- function(packages = c("rentrez", "stringr", "plyr", "dplyr", "withr", "XML", 
-                                                "data.table", "tidyr", "phylotools", "scales", 
-                                                "purrr", "readr", "phytools", "RColorBrewer", 
-                                                "maps", "ggplot2", "tidygeocoder", "treeio", 
-                                                "ggtree", "ggrepel", "taxize", "Biostrings")) {
-  for (pkg in packages) {
-    if (!requireNamespace(pkg, quietly = TRUE)) {
-      install.packages(pkg)
-    }
-    library(pkg, character.only = TRUE)
-  }
-}
-
-
 
 # to retrieve accessions for individual taxa names
 fetch_accessions_for_taxon <- function(taxon, max_acc = max_acc_per_taxa) {

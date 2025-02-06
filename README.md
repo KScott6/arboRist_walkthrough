@@ -5,6 +5,19 @@ The NCBI database contains metadata of varying quality. This script attempts to 
 
 In order to use this script, please specify your desired options:
 
+# Step 0: Install/load required packages
+
+required_packages <- c("rentrez", "stringr", "plyr", "dplyr", "withr", "XML", 
+                       "data.table", "tidyr", "phylotools", "scales", 
+                       "purrr", "readr", "phytools", "RColorBrewer", 
+                       "maps", "ggplot2", "tidygeocoder", "treeio", 
+                       "ggtree", "ggrepel", "taxize", "Biostrings")
+installed_packages <- required_packages %in% rownames(installed.packages())
+if (any(installed_packages == FALSE)) {
+  install.packages(required_packages[!installed_packages])
+}
+invisible(lapply(required_packages, library, character.only = TRUE))
+
 # Step 1: Specify project options
 
 #### Main Options

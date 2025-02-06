@@ -56,10 +56,9 @@ I also HIGHLY recommended to provide your NCBI API key (increases number request
 > 
 > acc_to_exclude <- c("") # optionally remove selected accessions from metadata files
 
-# Step 2: Set up project file structure and load packages 
-> setup_project_structure()
-> load_required_packages()
+# Step 2: Set up project file structure
 
+> setup_project_structure()
 
 # Step 3:  Retrieve data from NCBI (accessions and metadata)
 The metadata retrieval step in particular can take quite a long time, depending on your search terms. If you have your NCBI API key set, the script will retrieve the metadata at a rate of ~ 1 accession / 0.5 seconds. 

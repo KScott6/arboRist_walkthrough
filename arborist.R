@@ -15,7 +15,7 @@ if (any(installed_packages == FALSE)) {
 invisible(lapply(required_packages, library, character.only = TRUE))
 
 # main options
-base_dir <- "path.expand('~')" # change to whereever you want your project directory stored
+base_directory <- "path.expand('~')" # change to whereever you want your project directory stored
 project_name <- "Blackwellomyces_tree" # name your project
 taxa_of_interest <- c("Blackwellomyces", "Flavocillium") # specify the taxa you want to grab accessions for
 regions_to_include <- c("RPB2", "TEF", "ITS") # specify the regions you want to grab accessions for

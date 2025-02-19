@@ -39,13 +39,13 @@ acc_to_exclude <- c("") # optionally remove selected accessions from metadata fi
 
 
 # automatic project folder setup
-setup_project_structure <- function(base_dir,
+setup_project_structure <- function(base_dir = base_directory,
                                     subdirs = c("intermediate_files", "metadata_files", "results_files", "temp_files", "multifastas",
                                                 "multifastas/aligned_fastas", "multigene_tree", "multigene_tree/prep")) {
   project_dir <- file.path(base_dir, project_name)
   
   if (!dir.exists(project_dir)) {
-    dir.create(project_dir)
+    dir.create(project_dir, recursive = TRUE)
   }
   
   for (dir in subdirs) {

@@ -24,7 +24,7 @@ In order to use this script, please specify your desired options:
 # Step 1: Specify project options
 
 #### Main Options
-> base_dir <- "path.expand('~')" # change to whereever you want your project directory stored
+> base_directory <- "path.expand('~')" # change to the parent directory you want your newly created project folder stored in (e.g /kelseyscott/Documents/Projects)
 > 
 > project_name <- "Blackwellomyces_tree" # name your project
 > 

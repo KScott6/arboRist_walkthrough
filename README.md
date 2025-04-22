@@ -1,4 +1,4 @@
-The arboRist script was created in order to automate the process of searching the NCBI nucleotide database for nucleotide accessions and curating the associated metadata. 
+The aRborist script was created in order to automate the process of searching the NCBI nucleotide database for nucleotide accessions and curating the associated metadata. 
 Additionally, you can use this script to also produce input for an iqtree2 paritioned (multi-gene) analysis.
 
 The NCBI database contains metadata of varying quality. This script attempts to standize the most common variations I have observed, however, there will almost certainly be unique adjustments needed for each analysis depending on your needs. I encourage you to read the data curation code and make adjustments that suit your purposes.
@@ -70,11 +70,11 @@ The metadata retrieval step in particular can take quite a long time, depending 
 > data_curate(project_name, taxa_of_interest, acc_to_exclude, min_region_requirement)
 
 
-At this point the data-retrieval steps in arboRist are complete. You may continue this pipeline to run a iqtree2 partitioned analysis (multi-gene tree)
+At this point the data-retrieval steps in aRborist are complete. You may continue this pipeline to run a iqtree2 partitioned analysis (multi-gene tree)
 
 
 # Step 5:  Separate alignment of region fastas
-At this point, arboRist does not automatically align your sequences for you. 
+At this point, aRborist does not automatically align your sequences for you. 
 Do your own alignment (output aligned fasta format, include gaps). Save aligned files to: "./multifastas/aligned_fastas"
 Eventually I'll get multiple formats supported.
 
